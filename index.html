@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Random Activity Generator</title>
+</head>
+<body>
+  <div id="shown-web-container">
+  <div class="hero">
+  <h1>Random Activity Generator</h1>  <image src="img\monkey.png.png" id="reload-icon" onclick="reset()"></image>
+  
+</div>
+  <div id="hidden-website-container">
+  <label for="activity-type" id="activity-text">Activity Type</label>
+  <select id="activity-type">
+    <option value="">All Types</option>
+    <option value="education">Education</option>
+    <option value="recreational">Recreational</option>
+    <option value="social">Social</option>
+    <option value="diy">DIY</option>
+    <option value="charity">Charity</option>
+    <option value="cooking">Cooking</option>
+    <option value="relaxation">Relaxation</option>
+    <option value="music">Music</option>
+    <option value="busywork">Busywork</option>
+  </select>
+  <br/>
+  <label for="participants" id="participants-text">Participants</label>
+  <input type="number" id="participants" min="1" max="10" value="1">
+  <br/>
+  <label for="accessibility" id="accessibility-text">Accessibility</label>
+  <div id="accessibility-buttons">
+    <button class="accessibility-button" id="easy" >Easy</button>
+    <button class="accessibility-button" id="medium">Medium</button>
+    <button class="accessibility-button" id="hard" >Hard</button>
+    <br/>
+    
+  <button id="submit-button">Get Your Activity</button> 
+  <button id="myActivities" ><a href="saved.html" >My Saved Activities</a></button>
+
+  <br/>
+  </div>
+  <div id="activity-container"></div>
+  <div id="hidden-btn">
+  <button id="buttonForClose" >Close Activity</button>
+  <button id="save-button">save</button>
+</div>
+
+<div id="modal-container">
+  <div id="modal-message">
+    <h1>Are You Bored?</h1>
+    <h2>Welcome To The </h2><h2 class="random-activity-generator-heading">Random Activity Generator</h2>
+    <h3>Pick an activity type: Choose from our list of activity types, including Education, Social, DIY, Music, and more.</h3>
+    <h3>Choose participants: Let us know how many people will be participating in the activity</h3>
+    <h3>Choose accessibility: Select the level of accessibility you prefer, ranging from easy, medium, to hard</h3>    
+   <h3>Saved Activities: Dont forget to save the activites you like you can save up to 4. Then find your activites in the My Saved Activies Page </h3>
+    <button onclick="hideModal()" id="closeBtn">Close</button>
+  </div>
+</div>
+
+
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Saved Activies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="hero">
+    <h1>My Saved Activies</h1> <image src="img\monkey.png.png" id="reload-icon" onclick="reset()"></image>
+</div>
+
+
+    <div id="activity-list-container">
+        <div id="activity-list">
+
+
+
+        </div>
+    </div>
+    <button id="returnBtn"><a href="./index.html">Return</a></button>
+
+    <script>
+        let savedActivities = JSON.parse(localStorage.getItem("savedActivities")) || []; // savedactivities parrse item or empty array
+
+        let activityList = document.getElementById("activity-list");
+
+        savedActivities.forEach(function (activity) {         // for each activity passed in create a activity div 
+            let activityDiv = document.createElement("div");
+            activityDiv.classList.add("activity-box");
+            activityDiv.innerHTML = `
+          <h2>Activity</h2><p>${activity.activity}</p><br/>
+          <h2>Activity Type</h2><p>${activity.type}</p>
+          <h2>Participants</h2><p>${activity.participants}</p>
+          <h2>Accessibility Score</h2><p>${activity.accessibility}</p>
+        `;
+
+            activityList.appendChild(activityDiv);
+        });
+
+
+        function reset() {
+  localStorage.clear();
+  console.log('reset')
+
+
+}
+    </script>
+</body>
+
+</html>
