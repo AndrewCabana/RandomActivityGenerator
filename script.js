@@ -98,7 +98,7 @@ function reset() {
             showSaveBtn()
           
           document.getElementById("save-button").addEventListener("click", function () {
-            let savedActivities = JSON.parse(localStorage.getItem("savedActivities")) ;  // get item saved actvivites parse to obj OR create array if pasred = null or falsey 
+            let savedActivities = JSON.parse(localStorage.getItem("savedActivities")) || [] ;  // get item saved actvivites parse to obj OR create array if pasred = null or falsey 
   
             if(savedActivities.length >= 4 ) { // check array length 
               savedActivities.splice(0, 1);  
